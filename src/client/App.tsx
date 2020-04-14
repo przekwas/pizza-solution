@@ -12,6 +12,9 @@ const App: React.FC<IAppProps> = () => {
 	return (
 		<>
 			<h1 className="text-primary text-center display-4">Toppings Ranking</h1>
+			{rankings?.length === 0 && (
+				<h1 className="text-center text-primary mt-5">Loading ...</h1>
+			)}
 			<main className="container my-5">
 				<section className="row justify-content-center">
 					<div className="col-md-8">
@@ -21,9 +24,7 @@ const App: React.FC<IAppProps> = () => {
 									key={item.rank}
 									className="list-group-item py-3 d-flex justify-content-between align-items-center">
 									<b>Rank {item.rank}</b>
-									<span>
-										{item.toppings}
-									</span>
+									<span>{item.toppings}</span>
 									<span className="badge badge-primary badge-pill">
 										{item.popularity}
 									</span>

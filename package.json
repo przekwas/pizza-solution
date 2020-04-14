@@ -10,8 +10,7 @@
     "dev": "npm-run-all --parallel watch:*",
     "start": "node dist/server.js",
     "build": "npx webpack",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "heroku-postbuild": "npm run build"
   },
   "keywords": [],
   "author": "",
@@ -39,7 +38,6 @@
     "webpack-node-externals": "^1.7.2"
   },
   "devDependencies": {
-    "gh-pages": "^2.2.0",
     "nodemon": "^1.19.4",
     "npm-run-all": "^4.1.3"
   }
